@@ -19,7 +19,7 @@ async function createServer() {
 
   // Helper for HTTP Range request streaming for video/audio
   const serveMediaWithRange = (req: express.Request, res: express.Response, next: express.NextFunction) => {
-    const parsedUrl = new URL(req.url, 'http://localhost');
+    const parsedUrl = new URL(req.originalUrl || req.url, 'http://localhost');
     const safePath = path.resolve(__dirname, '.' + decodeURIComponent(parsedUrl.pathname));
     if (!safePath.startsWith(__dirname)) return next();
     if (fs.existsSync(safePath) && fs.statSync(safePath).isFile()) {
