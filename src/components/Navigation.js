@@ -1,0 +1,1 @@
+export function Navigation(){return `<nav class="navigation" aria-label="Main navigation"><a class="current" href="#overview" aria-current="page">Overview</a><a href="#web-development">Services</a><a href="./work.html">Work</a><a href="./src/company/about.html">About Us</a><a href="#contact">Contact</a></nav>`;}
